@@ -1,0 +1,111 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+	<title>{{ pagetitle|title }}</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'fevico/favicon-32x32.png' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="charset" content="utf-8"/>
+	
+	{% block meta %}
+
+	{% endblock %}
+	
+	{% if meta %}
+		{% include 'components/meta.html' %}
+	{% endif %}
+	
+	
+	
+	
+
+	<script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}?v=1.2.0.3"/>
+	<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet">
+	
+
+	
+	<script data-ad-client="ca-pub-5001072046724998" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<style>twitter-widget{width: 100% !important;}</style>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function(){
+    FB.init({
+      appId      : '3400312486649200',
+      xfbml      : true,
+      version    : 'v4.0',
+	  autoLogAppEvents:'1'
+    });
+
+};
+</script>
+
+
+
+<div class="boxed">
+{%  include 'components/navbar.html'%}
+
+
+
+
+
+	
+	
+	<div class="adv">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle"
+     			style="display:block"
+     			data-ad-format="fluid"
+     		data-ad-layout-key="-fb+5w+4e-db+86"
+     		data-ad-client="ca-pub-5001072046724998"
+     		data-ad-slot="1072879107"></ins>
+		<script>
+     		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+	</div>
+	
+	<div class="header-co">
+	
+		{% block header %}
+
+			<!-- header -->
+			 
+		{% endblock %}
+		
+	</div>
+	
+	<div class="meg-container">
+	
+		{% block content %}
+			replace me
+		{% endblock %}
+
+	</div>
+	
+	
+	
+	
+{%  include 'components/footer.html'%}
+
+</div>	
+
+</body>
+</html>

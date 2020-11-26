@@ -1,0 +1,46 @@
+{% load static %}
+{% load tz %}
+		
+		
+		
+		
+		
+			<div class="pin-s bdcr">
+			
+			
+			
+				<div class="pinbody">
+					<div class="pinb-s">
+						<div class="trenderr">
+							<div class="tr-label">
+								<span>{{ forloop.counter }}</span>
+							</div>
+						</div>
+						<div class="pinr-s">
+							<div class="pinbox-s md-banner-s">
+								<div class="banner-img-s">
+								
+									<a href="{% url '_articlepage' cat=e.category labl=e.label name=e.slug %}" class="_dflk">
+										<img src="{{ e.thumbs.url }}" class="pin-thumb-s thumb100" alt="{{e.title|title}}"/>
+									</a>
+										
+								</div>
+							</div>
+							<div class="pinbox md-content">
+								<div class="con">
+									<div class="pintitle-s fbd"><a class="_dflk _udlink" href="{% url '_articlepage' cat=e.category labl=e.label name=e.slug %}">{{ e.title|title  }}</a></div>
+								</div>
+							</div>
+							<div class="pinbox md-inf"></div>
+						</div>
+					</div>
+				</div>
+			
+				
+			
+			</div>
+					
+			
+				
+			
+			

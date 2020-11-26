@@ -1,0 +1,167 @@
+
+<style>
+footer.footer {
+    margin-top: 50px;
+}
+.footer-box {
+    background: #bababa;
+    border: solid #939393;
+    border-width: 1px 0 0 0;
+}
+.colcnt {
+    padding: 20px 0;
+}
+.col3 {
+    width: 33.33%;
+    float: left;
+}
+ul.ftlst {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	text-align: center;
+}	
+li.ftlistitm {
+    line-height: 1.333;
+	color: #575454;
+}
+li.ftlistitm:hover{color:black}
+li.ftlisthd {
+    margin:20px auto;
+    font-weight: bold;
+    padding: 4px 8px;
+    border: solid #adacac;
+    border-width: 0 0 2px 0;
+    display: table;
+}
+.soclk {
+    margin: auto;
+    display: block;
+    float: left;
+    width: 50%;
+    min-width: 320px;
+	text-align: center;
+}
+.hrdrd {
+    background: #afafaf;
+    height: 3px;
+    width: 100px;
+    margin: auto;
+}
+.brhr {
+    padding: 8px;
+}
+span.sharelable {
+    font-weight: bold;
+    line-height: 3.5;
+}
+.linkitem {
+    display: inline;
+    line-height: 3;
+    border-radius: 1000px;
+}
+
+.ha {
+    font-size: 100%;
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.ha:hover {
+    opacity: 0.7;
+}
+.fafacebook {
+  background: #3B5998;
+  color: white;
+}
+.fatwitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fayoutube {
+  background: #bb0000;
+  color: white;
+}
+.fainstagram {
+  background: #125688;
+  color: white;
+}
+.falinkedin {
+  background: #007bb5;
+  color: white;
+}
+.bnlgs {
+    padding: 20px 0px;
+    color: #222222;
+}
+
+
+</style>
+
+<footer class="footer">
+
+	<div class="footer-box">
+		
+		<div class="row brhr clear">
+			<div class="hrdrd" style="display:none"></div>
+			<div class="soclk">
+				<div class="bnlgs">
+					<span><i>www.figgup.com</i></span>
+					<span><b>{% now 'Y' %}</b></span>
+				</div>
+			</div>
+			<div class="soclk">
+				
+				<a href="https://www.facebook.com/figgup-110623833635693/" class="ha linkitem fa fafacebook fa-facebook" target="_blank"></a>
+				<a href="https://twitter.com/figgup_" class="ha linkitem fa fatwitter fa-twitter" target="_blank"></a>
+				<a href="#" class="ha linkitem fa falinkedin fa-linkedin" target="_blank"></a>
+				<a href="https://www.youtube.com/channel/UCpPtiEL0bvAofjLuuZVoDoQ" class="ha linkitem fa fayoutube fa-youtube" target="_blank"></a>
+				<a href="https://www.instagram.com/figgupofficial/?hl=en" class="ha linkitem fa fainstagram fa-instagram" target="_blank"></a>
+				
+			</div>
+		</div>
+	</div>
+	<div class="wigg">
+		<style>
+		div#supbtn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    padding: 12px 20px;
+    margin: 0 20px 55px 0;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0px 2px 6px #262527;
+    font-size: 150%;
+    color: #060606;
+    cursor: pointer;
+}
+#supbtn:hover{background:#f1f1f1}
+		
+		
+		</style>
+		
+		<div id="supbtn" class="" title="Scroll To Top" style="display:none"><i class="fa fa-long-arrow-up"></i></div>
+		<script>
+		$(document).ready(function(){
+			$("#supbtn").click(function() {
+			  $("html, body").animate({ scrollTop: 0 }, "slow");
+			  return false;
+			});
+			var ls = 0;
+			$(window).scroll(function(){
+				s=$(this).scrollTop();
+				if ((s <= ls) && (s>500))$("#supbtn").fadeIn();
+				else $("#supbtn").fadeOut();
+			   ls = s;
+			});
+		});	
+		</script>
+	</div>
+
+</footer>

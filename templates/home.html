@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+
+{% block meta %}
+
+	<meta name="title" content="{{pagetitle}}">
+	<meta name="description" content="We create awesomeness, Find all the intresting and current updates, happening around the world.">
+	<meta name="google-site-verification" content=""/>
+	
+	<meta name="robots" content="all">
+    	<meta name="MSSmartTagsPreventParsing" content="true">
+    	<meta name="Copyright" content="figgup">
+    	<meta name="keywords" content="figgup, figg up, politics, funny articles, entertainment content, funny jokes, info news, politics, world news, world content">
+	
+	
+{% endblock %}
+
+{% block header %}
+
+	{%  include 'headerpin.html' %}
+	
+{% endblock %}
+
+{% block content %}
+	
+	{%  include 'pinbody.html'%}
+	{%  include 'rightcol.html'%}
+
+{% endblock %}

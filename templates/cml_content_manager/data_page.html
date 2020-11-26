@@ -1,0 +1,206 @@
+{% load static %}
+				
+				
+				
+<style>
+
+
+td.th__d,td.tb_t{
+	 padding: 13px 10px;
+}
+td.tb_t {
+    border: solid lightgrey;
+    border-width: 1px 0 0 0;
+}
+td.th__d {
+   
+    background: #03A9F4;
+    font-weight: bold;
+    color: white;
+}
+tr.tb_tr:nth-child(even) {
+    background: #f3faff;
+}
+._my_edit_btns {
+    padding: 4px 8px;
+    background: #2196F3;
+    color: white;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+}
+._my_edit_btns:hover {
+    background: #03A9F4;
+}
+a.anchor {
+    text-decoration: none;
+    color: #2196F3;
+}
+a.anchor:hover {
+    text-decoration: underline;
+    color: #2196F3;
+}
+.search-inner {
+    float: right;
+    padding: 5px 4px;
+    margin: 12px 0;
+    width: 230px;
+    border: solid 1px grey;
+    border-radius: 4px;
+}
+input#myInput {
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 0;
+}
+</style>
+<div class="">
+	<div class="clear">
+		<div class="search-inner">
+			<div>
+				<input id="myInput" type="text" placeholder="Search..">
+			</div>
+		</div>
+	</div>
+	<table style="border-spacing:0;margin:auto;width: 100%;">
+		<thead>
+			<tr class="th_tr">
+				<td class="th__d">Serial</td>
+				<td class="th__d">Title</td>
+				<td class="th__d">Content Id</td>
+				<td class="th__d">Creating Date</td>
+				<td class="th__d">Last Modified</td>
+				<td class="th__d">Status</td>
+				<td class="th__d">Live Link</td>
+				<td class="th__d">Action</td>
+			</tr>
+		</thead>
+		<tbody id="tbd__">
+			{% for c in cont %}
+			<tr class="tb_tr">
+				<td class="tb_t">{{ forloop.counter }}</td>
+				<td class="tb_t">{{ c.title }}</td>
+				<td class="tb_t">{{ c.id }}</td>
+				<td class="tb_t">{{ c.created_at }}</td>
+				<td class="tb_t">
+					<div>{{ c.modified_at }}</div>
+					</div>
+						{% if c.is_updated %}
+							<div class="approve _excl">Under Review</div>	
+						{% endif %}	
+					</div>
+				</td>
+				<td class="tb_t">
+					{% if c.is_new %}
+						<div class="approve _excl">Not Published Yet</div>
+					{% elif c.is_rejected %}
+						<div class="approve _error">Not Approved</div>
+					{% else %}
+						<div class="approve _succes">A version is live</div>
+						<div><a href="#" class="anchor _abled">Link</a></div>	
+					{% endif %}
+				</td>
+				<td class="tb_t">
+					{% if c.is_new %}
+						<div class="approve">Unavailable</div>
+					{% elif c.is_rejected %}
+						<div class="approve _error">This article is rejected</div>
+					{% else %}
+						<div data-url="#" class="_my_prev_btns">Link<div>
+					{% endif %}
+				</td>
+				<td class="tb_t">
+					{% if c.is_editable %}
+						<div data-url="{% url '_edit_form' id=c.id %}" class="action _abled _my_edit_btns">Edit</div>
+					{% else %}
+						<div class="action _disabaled">Unavailable</div>
+					{% endif %}
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	
+		
+	
+
+	
+</div>				
+					
+<script>
+$(document).ready(function(){
+				
+				$("._my_edit_btns").click(function(){
+				
+					if(submit=1){
+																
+
+																var p = $("#editor_figgup"),
+																 
+																url = $(this).data("url");
+																
+																	erp.html(p,'<div class="loader"></div>')
+																	erp.jax("",{},"GET",url,
+																	function(e){
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																	},function(e){
+																		//t.jxerr(e,p)
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																		
+																		if(e.id){
+																			
+																		}
+																		
+																});
+																
+															}
+				
+				})
+				
+				$("._my_prev_btns").click(function(){
+				
+					if(submit=1){
+																
+																$("#_prev_all_in").show();
+
+																var p = $("#prev-body"),
+																 
+																url = $(this).data("#");
+																
+																	erp.html(p,'<div class="loader"></div>')
+																	erp.jax("",{},"GET",url,
+																	function(e){
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																	},function(e){
+																		//t.jxerr(e,p)
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																		
+																		if(e.id){
+																			
+																		}
+																		
+																});
+																
+															}
+				
+				})
+				
+				
+				
+				$("#myInput").on("keyup", function() {
+					var value = $(this).val().toLowerCase();
+					$("#tbd__ tr").filter(function() {
+					  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+					});
+				  });
+				
+				
+			
+			})
+									
+</script>
+			
+
+		

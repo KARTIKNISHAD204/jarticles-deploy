@@ -1,0 +1,101 @@
+{% load static %}
+
+		
+				<style>
+				
+					
+						
+						
+
+				</style>
+		
+				<div id="article" class="artilebody">
+					<div class="mono"></div>
+					<div class="nomo">
+						
+
+					
+						<article style="overflow:hidden">
+						
+							<div class="ar-title hftu ar-mar">{{ article.title|capfirst }}</div>
+							<div class="ar-conc hftu ar-mar">{{ article.tag_line|title }}</div>
+							<div class="ar-info hftu">
+							
+								<div class="odlt clear art-hed colfar">
+								
+									<div class="menu-hd">
+										<div class="_lin3_ label tiniti">
+											<span>
+												<span class="col-sec-glow">
+													<i class="fa fa-user-circle-o" style="font-size:30px"></i>
+												</span>
+												<span>by</span>	
+												<span class="col-sec-glow">
+													<a href="{% url '_authorpage' author=article.by author_id=article.by_id %}" style="color:inherit" class="_dflk _udlink" title="{{ article.by|title }}">{{ article.by|title }}</a>
+												</span>
+											</span>
+											<span>
+												<span>at</span>
+												<span class="col-sec-glow-pan">{{ article.created_at }}</span>
+											</span>
+										</div>
+									</div>
+									
+									
+									<div class="menu-hd">
+									<div class='_lhn_ label' style="display:none"><div>Share</div></div>
+									<a href="http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}" title="Share on Facebook" target="_blank" class="_dflk  _udlink _lhn_ fbk _fb_big">
+										<i class="fic-- fa fa-facebook"></i>
+									</a>
+									<a href="https://twitter.com/share?url={{request.build_absolute_uri}}&amp;text={{article.title|title}}" title="Share on Twitter" target="_blank" class="_dflk _udlink _lhn_ twt ">
+										<i class="fic-- fa fa-twitter"></i>
+									</a>
+									<a href="whatsapp://send?text={{article.title}} {{request.build_absolute_uri}}" target="_blank" title="Share on Whatsapp" class="_dflk _udlink _lhn_ wsa ">
+										<i class="fic-- fa fa-whatsapp"></i>
+									</a>
+									<a href="mailto:?subject={{article.title|title}}&body={{article.tag_line}}" title="Send by Email" class="_dflk _udlink _lhn_ ema" target="_blank">
+										<i class="fic-- fa fa-envelope"></i>
+									</a>
+									</div>
+									
+									
+								</div>
+							
+							</div>
+							<div class="ar-banner">
+								<div class="imager">
+									<img src="{{ article.thumbs.url }}" class="article-banner thumb100"/>
+								</div>
+							</div>
+							<div class="sub-bdy clear">
+							<div class="ar-sub-tree">
+								
+							</div>
+							<div class="ar-max-w">
+								<div class="ar-doc ar-mar">
+								
+									{{ article.body|safe|capfirst }}
+								
+								</div>
+								<div class="graytxt msg descl cap">{{ article.disclaimer|capfirst|linebreaks }}</div>
+								<div class="graytxt msg advs cap">{{ article.advisory|capfirst|linebreaks }}</div>
+							</div>
+							</div>
+							<div id="EOA"></div>
+						</article>
+					</div>
+					
+				</div>
+				<div class="fb-quote"></div>
+				<div id="commentbody" class="comment-body">
+					<div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-width="" data-numposts="5"></div>
+				
+				</div>
+			
+				
+			
+			
+
+		
+		
+		

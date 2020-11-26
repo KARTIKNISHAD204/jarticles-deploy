@@ -1,0 +1,505 @@
+{% load static %}
+				
+				
+				<!-- New candidate form -->
+<style>
+
+.label- {
+    font-weight: bold;
+    font-size: 20px;
+    padding-right: 20px;
+	font-family: questrial;
+}
+
+.help {
+    color: #9c9a9a;
+    font-size: 12px;
+    padding: 8px 0px;
+}
+.sec_holder {
+    background: #f7f7f7;
+}
+.input-positioner {
+    margin: 0 0 12px 0;
+}
+table.form-table,.live-report-er {
+    width: 100%;
+    max-width: 960px;
+	margin: auto;
+}
+.input-table-field>input, .input-table-field>select, .input-table-field>textarea, textarea {
+    width: 100% !important;
+    padding: 8px 0;
+    border: 0;
+    outline: none;
+    resize: vertical;
+}
+.form-name {
+    padding: 26px 0;
+    font-size: 120%;
+}
+input#id_thumbs {
+    background: #e9e9e9;
+    border: dashed;
+    box-sizing: border-box;
+    border-color: #aca6a6;
+    border-width: 2px;
+    height: 108px;
+}
+.input-pan {
+	background: white;
+    border: solid 1px;
+    padding: 8px;
+    border-color: #d7d5d5 #c5c3c3 #b4b2b2 #e9e8e8;
+    box-shadow: 0 0 1px #dcdbdb;
+    border-radius: 4px;
+    
+}
+.django-ckeditor-widget{width:100%}
+.label {
+    color: #777878;
+    font-size: 16px;
+    padding: 4px 0px;
+    font-family: questrial;
+}
+td.f-t-b-d {
+    vertical-align: top;
+}
+ul.errorlist {
+    color: red;
+    list-style: none;
+    padding: 0;
+}
+.form-er-line {
+    height: 8px;
+    width: 100%;
+    background: #3291dd;
+    margin: 100px 0 20px 0;
+    border-radius: 500px;
+}
+.rloat{float:right}
+.lloat{float:left}
+.live-report-er {
+    padding: 20px 8px;
+    border: solid;
+    border-width: 1px;
+    border-color: #eaeaea #dcdada #cac4c4 #dcd9d9;
+    background: white;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #aba8a8;
+	line-height: 1.6;
+}
+</style>
+
+				
+				<div id="form-division" class="">
+					{% if this_id %}
+					<div class="live-report-er">
+						<b>Live Report</b>
+						<span>
+							Is published? : <span class="trge">{{ live.is_published }}</span> | 
+							Last Updated : <span class="trge">{{ live.modified_at }} </span> | 
+							Published at : <span class="trge">{{ live.created_at }}</span>
+							<br>
+						</span>
+						<b>Content Report</b>
+						<span>
+							Is Editable? : <span class="trge">{{ cont.is_editable }}</span> | 
+							Last Edited : <span class="trge">{{ cont.modified_at }} </span> |
+							Created at : <span class="trge">{{ cont.created_at }}</span>
+							<br>
+						</span>
+					</div>
+					<div class="action-repo live-report-er">
+						<div class="">
+											<div class="clear">
+												<div style="min-width:160px" data-url="{% url 'witer_prev' id=this_id	  %}" class="rloat btn-mnm btn-preview _my_prev_btns"> Preview </div>
+												<div class="rloat"> </div>
+												<div class="lloat">
+													<b> Content Preview - </b> <br/>
+													(Last Updated : {{ cont.modified_at }})
+												</div>
+											</div>
+										</div>
+										<script>
+										
+										$("._my_prev_btns").click(function(){
+				
+												if(submit=1){
+																
+																$("#_prev_all_in").show();
+
+																var p = $("#prev-body"),
+																 
+																url = $(this).data("url");
+																
+																	erp.html(p,'<div class="loader"></div>')
+																	erp.jax("",{},"GET",url,
+																	function(e){
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																	},function(e){
+																		//t.jxerr(e,p)
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																		
+																		if(e.id){
+																			
+																		}
+																		
+																});
+																
+															}
+				
+											})
+										
+										</script>
+									
+										
+					
+					</div>
+					{% endif %}
+					<form id="article_editor" class="table-form form-type-noval" method="POST" action="{% url '_content_form' %}" enctype="multipart/form-data" novalidate>
+						<table class="form-table" cell-spacing=0>
+							<thead class="f-head">
+								<tr class="f-t-head">
+									<td class="ft-td" colspan=2>
+										<div class="form-name">
+										
+										{% if this_id %}
+										
+											<div><h4> Edit Article </h4></div>
+											<div> Article Id - {{ this_id }} | {{ cont.title }}</div>
+											
+										
+												
+										
+										
+										{% else %}
+											
+											New Article Form
+										
+										{% endif %}
+										
+										
+										
+										</div>
+									</td>
+								</tr>
+							</thead>
+							<tbody class="form-table-body">
+								<tr>
+									<td></td>
+									<td>
+										
+										
+									</td>
+								</tr>
+								<tr>
+									<td colspan=2>
+										
+										{{ form.media }}
+										{{ form.non_field_errors }}
+	
+										{{ form.source.errors }}
+										{{ form.source }}
+										
+										
+										{% for field in form %}
+											<div class="fieldWrapper" style="display:none">
+												
+												{{ field.errors }}
+												{{ field.label_tag }}
+												{% if field.help_text %}
+												<p class="help">{{ field.help_text|safe }}</p>
+												{% endif %}
+											</div>
+										{% endfor %}
+										
+									</td>
+								</tr>
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										<div class="label-">Heads</div>
+									</td>
+									
+									<td>
+									{% if this_id %}
+										
+										<div class="label">Label</div>
+										<div class="input-positioner">
+											<div style="background:#ffdf7e !important" class="input-pan input-table-box input-table-field nogo">
+											
+											{{ cont.label }}
+											
+											
+											</div>
+											<div class="err">{{ form.label.errors }}</div>
+											<div class="help">{{ form.label.help_text|safe }}</div>
+										</div>
+										
+									{% else %}
+											
+										<div class="label">Label</div>
+										<div class="input-positioner">
+											<div class="input-pan input-table-box input-table-field nogo">
+											{{ form.label }}
+											
+											
+											</div>
+											<div class="err">{{ form.label.errors }}</div>
+											<div class="help">{{ form.label.help_text|safe }}</div>
+										</div>
+										
+									{% endif %}
+										
+										
+									</td>
+									
+								</tr>
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										
+									</td>
+									<td>
+										<div class="label">Title</div>
+										<div class="input-positioner">
+											<div class="input-pan input-table-box input-table-field nogo">
+											{{ form.title }}
+											
+											
+											</div>
+											<div class="err">{{ form.title.errors }}</div>
+											<div class="help">{{ form.title.help_text|safe }}</div>
+										</div>
+									</td>
+								</tr>	
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										
+									</td>
+									<td>
+										<div class="label">Tag Line</div>
+										<div class="input-positioner">
+											<div class="input-pan input-table-box input-table-field nogo">
+											{{ form.tag_line }}
+											
+											
+											</div>
+											<div class="err">{{ form.tag_line.errors }}</div>
+											<div class="help">{{ form.tag_line.help_text|safe }}</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										
+									</td>
+									<td>
+										<div class="label">Thumbnail</div>
+										<div class="input-positioner">
+											<div class="input-pan input-table-box input-table-field nogo">
+											{{ form.thumbs }}
+											
+											
+											</div>
+											<div class="err">{{ form.thumbs.errors }}</div>
+											<div class="help">{{ form.thumbs.help_text|safe }}</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										<div class="label-">Body</div>
+									</td>
+									<td>
+										<div class="label">Article Content</div>
+										<div class="input-positioner">
+											<div class="input-pan- input-table-box input-table-field nogo">
+											{{ form.body }}
+											
+											
+											</div>
+											<div class="err">{{ form.body.errors }}</div>
+											<div class="help">{{ form.body.help_text|safe }}</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										<div class="label-">Footer</div>
+									</td>
+									<td>
+										<div class="label">Advisory</div>
+										<div class="input-positioner">
+											<div class="input-pan input-table-box input-table-field nogo">
+											{{ form.advisory }}
+											
+											
+											</div>
+											<div class="err">{{ form.advisory.errors }}</div>
+											<div class="help">{{ form.advisory.help_text|safe }}</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										
+									</td>
+									<td>
+										<div class="label">Disclaimer</div>
+										<div class="input-positioner">
+											<div class="input-pan input-table-box input-table-field nogo">
+											{{ form.disclaimer }}
+											
+											
+											</div>
+											<div class="err">{{ form.disclaimer.errors }}</div>
+											<div class="help">{{ form.disclaimer.help_text|safe }}</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										<div class="label-">Meta</div>
+									</td>
+									<td>
+										<div class="label">Keywords</div>
+										<div class="input-positioner">
+											<div class="input-pan input-table-box input-table-field nogo">
+											{{ form.keywords }}
+											
+											
+											</div>
+											<div class="err">{{ form.keywords.errors }}</div>
+											<div class="help">{{ form.keywords.help_text|safe }}</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d">
+										
+									</td>
+									<td>
+										<div class="label">Tags</div>
+										<div class="input-positioner">
+											<div class="input-pan input-table-box input-table-field nogo">
+											{{ form.tags }}
+											
+											
+											</div>
+											<div class="err">{{ form.tags.errors }}</div>
+											<div class="help">{{ form.tags.help_text|safe }}</div>
+										</div>
+									</td>
+								</tr>
+								
+								
+								
+								
+								<tr class="f-t-b-t">
+									<td class="f-t-b-d"></td>
+									<td class="f-t-b-d">
+										
+										<input name="csrfmiddlewaretoken" type="hidden" value="{{ csrf }}"/>
+										
+										<div class="clear">
+											<div class="rfloat">
+												
+												
+												{% if this_id %}
+										
+												<button id="form-sub-jax1" class="f-t-b-btn btn-mnm btn-preview">Update And Continue Editing</button>	
+												<div class="btn-mnm btn-preview">Sumbit for approval</button>
+										
+												{% else %}
+													
+												<button id="form-sub-jax1" class="f-t-b-btn btn-mnm btn-preview">Save And Continue Editing</button>	
+										
+												{% endif %}
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="form-er-line"></div>
+					</form>
+				</div>
+				
+				<!-- New candidate form end -->
+					
+					<script>
+						$(document).ready(function(){for (var i in CKEDITOR.instances) {
+								CKEDITOR.instances[i].on('change', function() { 
+								CKEDITOR.instances[i].updateElement() });
+								console.log("hit");
+							}
+						})	
+						erp.formValidate($("#article_editor"),"form-type-noval","New candidate form validated",function(a,b,t){
+								
+							var e = a.find($("td"))
+							e.each(function(){
+								if($(this).find("input,textarea").prop('required')){
+									$(this).find(".label").css({"font-weight":"bold"}).append("*")
+								}
+							});
+								
+						});
+						erp.formPop($("#jax-response-body-rec"),$(".sdf"),"You have Unsaved Data "); // put element and message in place...
+						erp.myObject($("#form-sub-jax1"),'Button Code form-sub-jax1',function(b,t){
+														
+														
+														
+														b.on('click',function(e){
+															e.preventDefault();
+															
+															var e = $("#article_editor").find($("td")), submit=true;
+															e.each(function(){
+																if($(this).find("input,textarea").prop('required') && $(this).find("input,textarea").val()==""){
+																	$(this).find(".input-pan").css({"border-color":"red"})
+																	submit = false
+																}
+																else{
+																	$(this).find(".input-pan").css({"border-color":""})
+																}
+																
+															
+							  								});
+															
+															
+															if(submit=1){
+																
+
+																var p = $("#editor_figgup"), frm = new FormData(this.form),
+																{% if this_id %} 
+																url = "{% url '_edit_form' id=this_id %}"
+																{% else %}
+																url = "{% url '_content_form' %}"
+																{% endif %}
+																	t.html(p,'<div class="loader"></div>')
+																	t.jax("",frm,"POST",url,
+																	function(e){
+																		setTimeout(function(){t.html(p,e.html)},0);
+																	},function(e){
+																		//t.jxerr(e,p)
+																		setTimeout(function(){t.html(p,e.html)},0);
+																		
+																		if(e.id){
+																			
+																		}
+																		
+																});
+																
+															}
+														});		
+													
+													});	
+
+						
+					  
+					</script>
+				<!-- New Employee Form End -->
+
+		

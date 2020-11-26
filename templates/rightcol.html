@@ -1,0 +1,63 @@
+	
+		
+		<div class="rightpannel tblc bdcr">
+			<div class="posR">
+				<div class="r-container">
+					<div class="pinlabel-s"><span>Trending This Month</span> <i class="fa fa-line-chart"></i></div>
+			
+					{% for e in trending %}
+						{%  include 'components/pin-sm.html'%}
+					{% endfor %}
+				</div>
+				<style>
+				
+				#pxnr {
+					height: 500px;
+					background: #ededed;
+				}
+				#pxnr.fx{position:fixed; bottom:0}
+				
+				</style>
+				<div id="psnr" class="fxcnt">
+					<div id="pxnr" class="fxposer"></div>
+				</div>
+				<script>
+				$(document).ready(function(){
+					
+					$( window ).scroll(function(){
+						_tp = $("#psnr");
+						_ht = $("#pxnr");
+						_up = $(".meg-container");
+						wt = _tp.width();
+						tp = _tp.position().top;
+						ht = _ht.height();
+						wh = $(window).height();
+						up = _up.position().top+_up.height();
+						w=$(document).scrollTop();
+						
+						
+						if(_up.height()>ht+tp){
+						if(w>(tp+ht-wh)){
+							if(w>(up-wh)){
+								_ht.css({"position":"fixed","width":wt,"bottom":(w-up+wh)})
+								
+							}
+							else{
+								_ht.css({"position":"fixed","width":wt,"bottom":0,"top":"unset"})
+							}
+						}
+						
+							
+						
+						else{ 
+							_ht.css({"position":"relative","width":"auto","bottom":0})
+						}
+						}
+					});
+					
+					
+				})
+				</script>
+			</div>
+		
+		</div>

@@ -1,0 +1,519 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+	<title>{{ pagetitle|title }}</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static '/vert-logo.png' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="charset" content="utf-8"/>
+	
+	{% block meta %}
+
+	{% endblock %}
+	
+	{% if meta %}
+		{% include 'components/meta.html' %}
+	{% endif %}
+	
+	
+	
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}?v=1.2.0.3"/>
+	<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet">
+	
+	<script src="{% static '/jscript.js' %}"></script>
+	
+	
+	
+	
+
+	
+	<style>twitter-widget{width: 100% !important;}</style>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<style>
+.loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top-color: #909394;
+    width: 16px;
+    height: 16px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 0.5s linear infinite;
+    margin: auto;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.panner-inbi {
+    float: left;
+}
+.btn-mnm {
+    float: left;
+    padding: 7px 12px;
+    margin: 2px;
+    border: solid 1px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    color: white;
+	cursor:pointer;
+	text-align:center;
+}
+.btn-mnm:hover{
+	background: linear-gradient(0deg, #2196F3, #03A9F4);
+}
+table.w-login-table {
+    margin: auto;
+    padding: 20px;
+}
+._lg-tp-msg {
+    font-size: 200%;
+    padding: 8px 0;
+    font-weight: bold;
+}
+._lg-bt-msg {
+    border: solid #dbdbdb;
+    border-width: 1px 0 0 0;
+    margin: 26px 0;
+    padding: 10px 10px;
+    background: #f1f1f1;
+    border-radius: 4px;
+    color: #808086;
+}
+div#umg_p {
+    color: #db3e3e;
+}
+.cml_head {
+    background: #e7e7e7;
+    box-shadow: 0 0 2px black;
+    padding: 8px;
+    border: solid #bab7b7;
+    border-width: 0 0 1px 0;
+}
+a.pr-links {
+    text-decoration: none;
+    padding: 5px 15px 5px 0;
+    display: block;
+    color: #455f8d;
+}
+a.pr-links:hover {
+    text-decoration: underline
+}
+.img-container-prof {
+    padding: 2px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #dcdcdc;
+    border: solid 2px #c5c5c5;
+}
+.figgup_tag {
+    font-size: 200%;
+    padding: 6px 8px;
+    font-weight: bold;
+    color: #1c2666;
+}
+.top-tool {
+    background: #FFC107;
+    padding: 5px 0;
+}
+
+
+img.img-s {
+    width: 100%;
+    height: 100%;
+}
+
+.careness {
+    display: table;
+    padding: 8px;
+    margin: 2px 0;
+    background: #567e9d;
+    border-radius: 0 36px 36px 0;
+    color: white;
+}
+.btn-mnm-sep {
+    float: left;
+    width: 1px;
+    height: 26px;
+    background: #535f9d;
+    margin: 5px 8px;
+    border-radius: 2px;
+}
+.btn-save{
+	background: linear-gradient(0deg, #2196F3, #00BCD4);
+    border-color: #2196F3;
+}
+.btn-preview,.btn-new{
+	background: linear-gradient(0deg, #2196F3, #00BCD4);
+    border-color: #2196F3;
+}
+._succes {
+    color: green;
+}
+._error {
+    color: red;
+}
+._disabaled {
+    color: #c1bcbc;
+}
+.abled{
+    color: blue;
+}
+.relative {
+    position: relative;
+}
+._excl {
+    color: #FF9800;
+}
+ul.ghlo {
+    padding: 0;
+    list-style: none;
+	margin:0;
+}
+.pop-flo {
+    position: absolute;
+    background: white;
+    padding: 16px;
+    right: 0;
+    border: solid 1px;
+    border-color: #dedcdc;
+    border-radius: 2px;
+    box-shadow: 0 0 1px 0 black;
+}
+a.mnm_link {
+    display: block;
+    text-decoration: none;
+    padding: 6px 8px;
+    color: black;
+    width: 130px;
+    font-size: 110%;
+}
+a.mnm_link:hover{
+	text-decoration:underline;
+}
+</style>
+</head>
+<body>
+	
+	<div class="boxed">		
+				<style>
+	.greyplot {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #0f0f0fa1;
+    overflow-y: auto;
+	z-index:999999999;
+}
+.whiteplot {
+    height: auto;
+    background: white;
+    max-width: 900px;
+    margin: auto;
+	padding:10px;
+}
+.whiteplot{}
+
+.list-btn {
+    padding: 8px 10px;
+    background: #ef6363;
+    color: white;
+    border-radius: 5px;
+	    cursor: pointer;
+}
+		</style>
+	<div id="_prev_all_in" class="greyplot" style="display:none">
+		<div class="whiteplot">
+			<div class="action_panel clear">
+				<div id="delete-btn" class="list-btn rloat">Close Preview</div>
+			</div>
+			<div id="prev-body" class=""></div>
+		</div>
+	</div>
+	<script>
+		
+		$(document).ready(function(){
+		
+			$("#delete-btn").click(function(){
+				$("#_prev_all_in").hide();
+			});
+		
+		});
+	
+	</script>
+	
+	
+		<div class="">
+	
+	
+			{% if user.is_authenticated %}
+			<div class="">
+				<div class="">
+					<div class="sec_holder">
+						
+						<div class="clear cml_head">
+							<table style="float:left">
+								<tbody>
+									<tr>
+										<td>
+											<div class="figgup_tag">figgup.com</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<table style="float:right">
+								<body>
+									<tr class="inhead_label_row">
+										<td class="inhead-img-prof" rowspan="2">
+											<div class="img-container-prof">
+												<img class="img-s" src="http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png" class="prof-inhead-pic"/>	
+											</div>
+										</td>
+										<td class="inhead_label_col" colspan=2>
+											<div class="label_text_1"><b>{{ user.get_full_name }}</b></div>
+										</td>
+										
+									</tr>
+									<tr class="inhead_label_row">
+										<td class="inhead_label_col">
+											<div class="label_text_2 relative">
+												<a href="#" id="account_menu" class="setting-profile-link pr-links">
+													Account <i class="fa fa-caret-down"></i>
+												</a>
+												<div id="menu_plate" class="pop-flo" style="display:none">
+													<div class="ghll">
+														<ul class="ghlo">
+															<li class="ghl">
+																<a class="mnm_link" href="#profile"><i class="fa fa-user-o"></i> <span class="fat">Profile</span></a>
+															</li>
+															<li class="ghl">
+																<a class="mnm_link" href="#Security"><i class="fa fa-user-secret"></i> <span class="fat">Security</span></a>
+															</li>
+															<li class="ghl">
+																<a class="mnm_link" href="#Settings"><i class="fa fa-gear"></i> <span class="fat">Settings</span></a>
+															</li>
+															<li class="ghl">
+																<a class="mnm_link" href="#Settings"><i class="fa fa-gear"></i> <span class="fat">Terms & Policy</span></a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="inhead_label_col">
+											<div class="label_text_2">
+												<a href="{% url '_writer_panel_logout' %}" class="log-out-link pr-links"> 
+													Logout <i class="fa fa-sign-out"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="top-tool clear">
+							<div class="panner-inbi">
+								<div class="careness">
+									<div id="" class="jinni"> 
+										<span id="" class="art-edit">Article Editor - </span>
+										<span id="" class="btn-editor">New</span>
+										<span>*</span>
+										<span id="" class="">Unsaved</span>
+									</div>
+								</div>
+							</div>
+							<div class="editor-btn">
+								<div id="" class="jinni">
+									<div id="_new_article" class="btn-mnm btn-save">New Article</div>
+									<div class="btn-mnm-sep"></div>
+									<div id="my_articles" class="btn-mnm btn-save">My Uploads</div>
+								</div>
+							</div>
+						</div>
+						<div class="meg-container">
+						
+							<div class="body-trap">
+								
+								<div id="editor_figgup" class="editor_panel"></div>
+							</div>
+						
+						</div>
+						
+					</div>
+				</div>
+			</div>	
+			
+			<script>
+			
+			
+			$(document).ready(function(){
+
+				$("#_new_article").click(function(){
+				
+					if(submit=1){
+																
+
+																var p = $("#editor_figgup"),
+																 
+																url = "{% url '_content_form' %}";
+																
+																	erp.html(p,'<div class="loader"></div>')
+																	erp.jax("",{},"GET",url,
+																	function(e){
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																	},function(e){
+																		//t.jxerr(e,p)
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																		
+																		if(e.id){
+																			
+																		}
+																		
+																});
+																
+															}
+				
+				})
+				$("#my_articles").click(function(){
+				
+					if(submit=1){
+																
+
+																var p = $("#editor_figgup"),
+																 
+																url = "{% url '_writer_data' %}";
+																
+																	erp.html(p,'<div class="loader"></div>')
+																	erp.jax("",{},"GET",url,
+																	function(e){
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																	},function(e){
+																		//t.jxerr(e,p)
+																		setTimeout(function(){erp.html(p,e.html)},0);
+																		
+																		if(e.id){
+																			
+																		}
+																		
+																});
+																
+															}
+				
+				})
+					$("#account_menu").click(function(e){
+				
+						e.preventDefault();
+						$("#menu_plate").toggle();										
+
+																
+																
+															
+				
+				})
+				
+			
+			})
+			
+			
+			</script>
+			
+			{% else %}
+						
+						<form method="POST" action="{% url '_writer_panel_login' %}" class="login_form_inhead">
+							<table class="w-login-table" style="">
+								<tbody>
+									<tr>
+										<td colspan=3>
+											<div class="_lg-tp-msg">Writer's Login!</div>
+										</td>
+									</tr>
+									<tr class="inhead_label_row">
+										<td class="inhead_label_col">
+											<div class="label_text"><b>User Name</b></div>
+										</td>
+										<td class="inhead_label_col">
+											<div class="label_text"><b>Password</b></div>
+										</td>
+										<td></td>
+									</tr>
+									<tr class="inhead_label_row">
+										<td class="inhead_label_col">
+											<input name="username" type="text" class="input_text inhead_logger_input"/>
+										</td>
+										<td class="inhead_label_col">
+											<input name="password" type="password" class="input_text inhead_logger_input"/>
+										</td>
+										<td>
+											{% csrf_token %}
+											<button type="submit" class="inhead-login-button">
+												<span>
+													<span>Log In</span>
+												</span>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td class="zerohtd">
+											<div class="rel_pop">
+												<div id="username_pop" class="inhead-hidden-pop pop-caret-top-left">
+													<div id="umg_p" class="msg">You are not logged in!</div>
+												</div>
+											</div>
+										</td>
+										<td class="zerohtd">
+											<div class="rel_pop">
+												<div id="password_pop" class="inhead-hidden-pop pop-caret-top-left">
+													<div id="pas_p" class="msg"></div>
+												</div>
+											</div>
+										</td>
+										<td class="zerohtd">
+											<div class="rel_pop">
+												<div id="logbtn_pop" class="inhead-hidden-pop pop-caret-top-left">
+													<div id="lgn_p" class="msg"></div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td colspan=3>
+											<div class="_lg-bt-msg">© www.figgup.com</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+						
+			{% endif %}
+						
+				
+			
+		
+	
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+{% load tz %}
+		
+			<div class="pin bdcr">
+			
+			
+			
+				<div class="pinbody">
+					<div class="pinb">
+						<div class="pinr">
+							<div class="pinbox md-banner">
+								<div class="banner-img">
+								
+									<a href="{% url '_articlepage' cat=e.category labl=e.label name=e.slug %}" class="_dflk" title="{{ e.title|title  }}" rel="bookmark"><img src="{{ e.thumbs.url }}" class="pin-thumb thumb100" alt="{{ e.title|title }}"/></a>
+										
+								</div>
+							</div>
+							<div class="pinbox md-content">
+								<div class="conjecture">
+									<div class="label--">{{ e.label|title }}</div>
+									<div class="pintitle fbd"><a class="_dflk _udlink" href="{% url '_articlepage' cat=e.category labl=e.label name=e.slug %}" title="{{ e.title|title  }}" rel="bookmark">{{ e.title|title  }}</a></div>
+									<div class="pindes">{{ e.tag_line|title }}</div>
+									<div class="pinkf mt10">by <a class="_dflk _udlink" href="{% url '_authorpage' author=e.by author_id=e.by_id %}" title="Stories by {{ e.by|upper }}" rel="bookmark">{{ e.by|upper }}</a></div>
+									<div class="pincontext">
+									<a class="_dflk _udlink" href="{% url '_catpage' cat=e.category %}" title="Stories in {{ e.category|title }}" rel="bookmark"><strong>{{ e.category|title }}</strong></a>,  
+									<i class="fa fa-clock-o"></i> 
+									<span>{{ e.created_at }}
+									</span>
+									</div>
+								</div>
+							</div>
+							<div class="pinbox md-inf"></div>
+						</div>
+					</div>
+				</div>
+			
+				
+			
+			</div>
+					
+			
+				
+			
+			

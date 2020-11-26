@@ -1,0 +1,197 @@
+
+<div class="container pcontain tblc">
+		
+		<div class="sider">
+		
+		<div class="pinlabel">{{ type|title }}</div>
+			
+		<div id="pin-feat-block">	
+			
+			{% for e in contentlist %}
+				{%  include 'components/pin.html'%}
+			{% endfor %}
+			
+		</div>	
+		<style>
+		
+#nmm {
+    font-weight: bold;
+    text-indent: 20px;
+}
+.loadmorbdy {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px auto;
+    background: #d6d5d5;
+    background: linear-gradient(45deg, #bbb9b9, #cacad0);
+    cursor: pointer;
+    border-radius: 4px;
+    max-width: 900px;
+    overflow: hidden;
+}
+.loadmorbdy:hover {
+    background: #bebcbc;
+}
+.loadmorbdy:active{background:#486ca9;}
+#ij19 {
+    padding: 10px;
+    border: solid 1px;
+    border-color: #beb8b8;
+    box-shadow: 0 0 1px #dadada;
+}
+#progby {
+    height: 2px;
+    background: #cac9c9;
+    width: 100%;
+}
+
+
+div#ij19t {
+    line-height: 1.53;
+}
+.loading-bar {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  border-radius: 4px;
+  animation: loading 1s ease-in-out infinite;
+}
+.loading-bar:nth-child(1) {
+  background-color: #3498db;
+  animation-delay: 0;
+}
+.loading-bar:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
+}
+.loading-bar:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
+}
+.loading-bar:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+
+		</style>
+
+		<div id="nmm"></div>	
+		<div class="loadmorbdy">
+			{% if contentlist.count == 0 %}
+				<div id="nmm">No Story Available</div>
+			{% endif %}
+			{% if aji >= contentlist.count %}
+			<div id="nmm"></div>
+			<div id='ij19'>
+				<div id="ldb" style="display:none;">
+				
+					<div class="loading-">
+						<div class="loading-bar"></div>
+						<div class="loading-bar"></div>
+						<div class="loading-bar"></div>
+						<div class="loading-bar"></div>
+					</div>
+				
+				</div>
+				<div id="ij19t">See more</div>
+			
+			</div>
+			{% endif %}
+		</div>	
+		<script>
+		
+		
+		function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+		
+			!function($){
+				var j={
+					i:{{contentlist.count}},
+					c:"{{ajc}}",
+					l:"{{ajl}}",
+					ini:function(){
+						this.r=parseInt(this.i)+1
+					}
+					
+					
+				};j.ini();
+				var csrftoken = getCookie('csrftoken');
+				$("#ij19").click(function(){
+					$("#ldb").show();
+					$("#ij19t").hide();
+						$.ajax.delay= 1000;
+						$.ajax({
+						
+							
+						
+						beforeSend:function(obj){
+							obj.setRequestHeader("X-CSRFToken", csrftoken);
+							
+						},
+						
+						
+						
+					
+						  type: "POST",
+						  url: "{% url 'pinfetch' %}",
+						  data: { i:j.i, r:j.r, c:j.c, l:j.l }
+						 
+						})
+						  .done(function( msg ) {	
+							j.i=j.r;j.ini();
+							
+							if(msg.replace(/\s/g,"") == ""){
+								$("#ij19").hide();
+								$("#nmm").append("No More Story Available");
+							}
+								
+								$("#pin-feat-block").append(msg);
+								$("#ldb").hide();
+								$("#ij19t").show();
+						    
+							
+						})
+						
+							
+						
+				});
+				
+				
+			}($)
+			
+			
+		
+		</script>	
+
+		</div>
+
+		
+		
+</div>

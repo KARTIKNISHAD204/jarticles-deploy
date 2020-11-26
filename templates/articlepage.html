@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container pcontain tblc">
+	<div class="sider">
+			{%  include 'components/article.html'%}
+			<div class="pinlabel">{{ type|title }}</div>
+			{% for e in contentlist %}
+				{%  include 'components/pin.html'%}
+			{% endfor %}
+	</div>
+</div>
+{%  include 'rightcol.html'%}
+
+{% endblock %}

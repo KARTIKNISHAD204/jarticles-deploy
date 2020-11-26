@@ -1,0 +1,1084 @@
+{% load static %}
+
+
+
+<!-- menu old -->
+
+
+
+<div class="menu" style="display:none">
+
+	<div class="menubody">
+		<div id="noshowsearch" class="abs-box mnwd">
+			<form action="{% url '_searchpage' %}" id="seacrh" class="sfch">
+				<div class="go-text inlnb upnfz">
+					<input name="q" class="_dfip fatter" type="text" placeholder="Search" required/>
+				</div>
+				<div class="go-btn inlnb upnfz">
+					<button type="submit" class="_dfip _dfbt fatter"><i class="fa fa-search"></i></button>
+				</div>
+				<div id="close_s_wig" class="go-btn inlnb fatter close_sbar upnfz" title="close">
+					<i class="fa fa-close"></i>
+				</div>
+			</form>
+		</div>
+		
+		<div id="articleguid" class="ctrl-block mblock drpbox mnwd">
+			<div class="navbar clear">
+				<div class="cols-f upnfz">
+					<div class="bar-menu lftm cent dtbl">
+						<style>
+						
+												
+						</style>
+						<div id="smshr" class="inlll">
+							<div class="_dflk  _udlink lhn- drpshbtn">
+								<span><i class="pln fa fic fa-paper-plane"></i></span>
+							</div>
+							<div id="shhid" class="show-share">
+								<a href="http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}" title="Share on Facebook" target="_blank" class="_dflk _udlink lhn- mnr">
+									<i class="fbk fic fa fa-facebook"></i>
+								</a>
+								<a href="https://twitter.com/share?url={{request.build_absolute_uri}}&amp;text={{article.title|title}}" title="Share on Twitter" target="_blank" class="_dflk _udlink lhn- mnr"><i class="twt fic fa fa-twitter"></i></a>
+								<a href="whatsapp://send?text={{article.title}} {{request.build_absolute_uri}}" target="_blank" title="Share on Whatsapp" class="_dflk _udlink lhn- mnr"><i class="wsa fic fa fa-whatsapp"></i></a>
+								<a href="mailto:?subject={{article.title|title}}&body={{article.tag_line}}" title="Send by Email" class="_dflk _udlink lhn- mnr"><i class="ema fic fa fa-envelope"></i></a>
+							</div>
+						</div>
+						
+						<div class='lhn label inlll'>
+							<div class="sblk">Share</div>
+							<div class="sblk"><b></b></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="cols-f upnfz	">
+					<div class="bar-menu bmn-shr">
+					
+						<div class="iconbbtn clear">
+						<div class="fatter menubtn rflo close_sbar"><i class="fa fa-search"></i></div>
+						</div>
+					
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		
+		<div id="scrnav" class="ctrl-block mblock drpbox mnwd">
+			<div class="navbar clear">
+				<div class="cols-f upnfz">
+					<div class="bar-menu lftm cent bmn-shr">
+						<span class='lhn md-feature label'>Follow us </span>
+						<a href="https://www.facebook.com/figgup-110623833635693/" target="_blank" class="_dflk  _udlink lhn-" title="Facebook page">
+							<i class="fbk-m fic- fa fa-facebook"></i>
+						</a>
+						<a href="https://twitter.com/figgup_" target="_blank" class="_dflk _udlink lhn-" title="Twitter account">
+							<i class="twt-m fic- fa fa-twitter"></i>
+						</a>
+						<a href="#" target="_blank" class="_dflk _udlink lhn-" title="YouTube channel">
+							<i class="wsa-m fic- fa fa-youtube"></i>
+						</a>
+						
+					</div>
+				</div>
+				<div class="cols-f upnfz">
+					<div class="bar-menu">
+					
+						<div class="iconbbtn clear">
+							<div class="fatter menubtn rflo close_sbar bmn-shr">
+								<i class="fa fa-search"></i>
+							</div>
+							<div class="rflo">
+						
+								<div id="hamenu-" class="hambox menu-toggle-">
+									<div class="ham- stick1"></div>
+									<div class="ham- stick2"></div>
+									<div class="ham- stick3"></div>
+								</div>
+						
+							</div>
+							
+						</div>
+					
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		
+		<div class="ctrl-block mblock mnwd">
+			<div class="navbar clear">
+				<div class="cols-f upnfz">
+					<div class="bar-menu">
+						<a href="{% url 'home' %}" class="_dflk fatter"><img class="logo-pr-ht" src="{% static 'logo/log-tr-cl1.png' %}" /></a>
+					</div>
+				</div>
+				<div class="cols-f upnfz">
+					<div class="bar-menu">
+					
+						<div class="iconbbtn clear">
+						<div class="fatter menubtn rflo close_sbar"><i class="fa fa-search"></i></div>
+						</div>
+					
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div id="mblock" class="alt-list mblock mnwd">
+			<div id="navb" class="navlist">
+			
+				<nav class="tmenu">
+				<style>
+					
+
+
+
+				</style>
+					<ul class="order1u odlt clear">
+						<li class="order1l small-slick">
+							
+								<div id="hamenu" class="hambox menu-toggle">
+									<div class="ham stick1"></div>
+									<div class="ham stick2"></div>
+									<div class="ham stick3"></div>
+								</div>
+							
+						</li>
+						
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='entertainment' %}" class="_dflk menu-item _udlink"><span>Entertainment<span> <i class="fa fa-caret-down"></i></a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='bollywood' %}" class="_dflk menu-item- _udlink">Bollywood</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='hollywood' %}" class="_dflk menu-item- _udlink">Hollywood</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='funny' %}" class="_dflk menu-item- _udlink">Funny</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='reviews' %}" class="_dflk menu-item- _udlink">Reviews</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='tvseries' %}" class="_dflk menu-item- _udlink">Tv Series</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='news' %}" class="_dflk menu-item _udlink"><span>News<span> <i class="fa fa-caret-down"></i></a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='politics' %}" class="_dflk menu-item- _udlink">Politics</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='world' %}" class="_dflk menu-item- _udlink">World</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='science' %}" class="_dflk menu-item- _udlink">Science</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='lifestyle' %}" class="_dflk menu-item _udlink"><span>Lifestyle<span> <i class="fa fa-caret-down"></i></a>
+						<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='fashion' %}" class="_dflk menu-item- _udlink">Fashion</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='food' %}" class="_dflk menu-item- _udlink">Food</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='travel' %}" class="_dflk menu-item- _udlink">Travel</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='gadgets' %}" class="_dflk menu-item _udlink"><span>Gadgets<span> <i class="fa fa-caret-down"></i></a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='mobile' %}" class="_dflk menu-item- _udlink">Mobile</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='pc' %}" class="_dflk menu-item- _udlink">PC</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='latest' %}" class="_dflk menu-item- _udlink">Latest</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='technology' %}" class="_dflk menu-item- _udlink">Technologies</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='inventions' %}" class="_dflk menu-item- _udlink">Inventions</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='sports' %}" class="_dflk menu-item _udlink"><span>Sports<span> <i class="fa fa-caret-down"></i></a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='cricket' %}" class="_dflk menu-item- _udlink">Cricket</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='football' %}" class="_dflk menu-item- _udlink">Football</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='games' %}" class="_dflk menu-item- _udlink">Games</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='explore' %}" class="_dflk menu-item _udlink"><span>Explore<span> <i class="fa fa-caret-down"></i></a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='explore' labl='top10' %}" class="_dflk menu-item- _udlink">Top 10</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='explore' labl='other' %}" class="_dflk menu-item- _udlink">More</a>
+								</li>
+								
+							</ul>
+						</li>
+						
+						
+					</ul>
+				</nav>
+				
+				<script>
+				
+						
+						
+				
+				</script>
+				
+			</div>
+
+		</div>
+	</div>
+	<script>
+		
+			$(document).ready(function(){
+			
+				  $(".menu-item").click(function(e){e.preventDefault();});	
+				
+				  $(".close_sbar").click(function(){
+				  nosh = $("#noshowsearch");
+					if(nosh.hasClass("srcdwn")) nosh.removeClass("srcdwn")
+					else nosh.addClass("srcdwn");
+				  });
+				  
+				  $("#hamenu-").click(function(){
+				  nash = $("#navb");
+					if(nash.hasClass("fl")) nash.removeClass("fl")
+					else nash.addClass("fl");
+				  });
+				  
+				  $("#hamenu,#hamenu-").click(function(){
+					$(".collapsemenu").fadeToggle(200);
+				  });
+				  
+				  $( window ).scroll(function() {
+					w=$(document).scrollTop();z8=$("#article");a=$("#articleguid");st=$("#scrnav");
+					
+					
+					
+					if(w>50){
+					st.addClass("srcdwn");
+					$("#mblock").addClass("mb");
+						
+					}
+					else {st.removeClass("srcdwn");
+					$("#mblock").removeClass("mb");
+					}
+						
+					if(z8.length){
+						t=z8.position().top;b=t+$("#article").height();
+						if((t<=w)&&(w<=b))a.addClass("srcdwn");
+						else a.removeClass("srcdwn");
+					}
+					
+				  
+				  });
+				  
+				  
+				  /*hiding menu*/
+				  
+				  $(document).mousedown(function(e){
+						var cent = $("#mblock,#hamenu-"),nash=$("#navb,#hamenu-") ;
+
+						// if the target of the click isn't the container nor a descendant of the container
+						if (!cent.is(e.target) && cent.has(e.target).length === 0) 
+						{
+							$(".collapsemenu").hide();
+						
+						}
+						if (!nash.is(e.target) && nash.has(e.target).length === 0) 
+						{
+							
+							$("#navb").removeClass("fl");
+						}
+					});
+					
+					
+					$(".togbtn243").hover(function(){
+							$(this).children(".level2drp").show();
+						},function(){
+							$(this).children(".level2drp").hide();
+					});
+					
+					$("#smshr").hover(function(){
+							$(this).children("#shhid").show();
+						},function(){
+							$(this).children("#shhid").hide();
+					});
+				  
+					
+				  
+				});
+				
+				
+		
+		</script>
+
+</div>
+
+
+<!-- menu old end -->
+
+<!-- menu new -->
+<div class="menu">
+
+	<div class="menubody--">
+		<div id="noshowsearch" class="abs-box mnwd">
+			<form action="{% url '_searchpage' %}" id="seacrh" class="sfch">
+				<div class="go-text inlnb upnfz">
+					<input name="q" class="_dfip fatter" type="text" placeholder="Search" required/>
+				</div>
+				<div class="go-btn inlnb upnfz">
+					<button type="submit" class="_dfip _dfbt fatter"><i class="fa fa-search"></i></button>
+				</div>
+				<div id="close_s_wig" class="go-btn inlnb fatter close_sbar upnfz" title="close">
+					<i class="fa fa-close"></i>
+				</div>
+			</form>
+		</div>
+		
+		<div id="articleguid" class="ctrl-block mblock drpbox mnwd" style="display:none">
+			<div class="navbar clear">
+				<div class="cols-f upnfz">
+					<div class="bar-menu lftm cent dtbl">
+						
+						<div id="smshr" class="inlll">
+							<div class="_dflk  _udlink lhn- drpshbtn">
+								<span><i class="pln fa fic fa-paper-plane"></i></span>
+							</div>
+							<div id="shhid" class="show-share">
+								<a href="http://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}" title="Share on Facebook" target="_blank" class="_dflk _udlink lhn- mnr">
+									<i class="fbk fic fa fa-facebook"></i>
+								</a>
+								<a href="https://twitter.com/share?url={{request.build_absolute_uri}}&amp;text={{article.title|title}}" title="Share on Twitter" target="_blank" class="_dflk _udlink lhn- mnr"><i class="twt fic fa fa-twitter"></i></a>
+								<a href="whatsapp://send?text={{article.title}} {{request.build_absolute_uri}}" target="_blank" title="Share on Whatsapp" class="_dflk _udlink lhn- mnr"><i class="wsa fic fa fa-whatsapp"></i></a>
+								<a href="mailto:?subject={{article.title|title}}&body={{article.tag_line}}" title="Send by Email" class="_dflk _udlink lhn- mnr"><i class="ema fic fa fa-envelope"></i></a>
+							</div>
+						</div>
+						
+						<div class='lhn label inlll'>
+							<div class="sblk">Share</div>
+							<div class="sblk"><b></b></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="cols-f upnfz	">
+					<div class="bar-menu bmn-shr">
+					
+						<div class="iconbbtn clear">
+						<div class="fatter menubtn rflo close_sbar"><i class="fa fa-search"></i></div>
+						</div>
+					
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		
+		
+		
+		<!-- menu row 1 -->
+		<div class="ctrl-block mblock- mnwd fixed z3 fixToScroll mrw1">
+			<div class="navbar- clear">
+				<div class="col75s-f upnfz-">
+					<div class="bar-menu-">
+						<div class="mf-item ham-nod">
+							<div id="hamenu" class="hambox- menu-toggle- sliderMenuToggleOn">
+								<div class="ham stick1"></div>
+								<div class="ham stick2"></div>
+								<div class="ham stick3"></div>
+							</div>
+						</div>
+						<div class="mf-item logotop">
+							<a href="{% url 'home' %}" class="_dflk fatter-  block">
+								<img class="logo-pr-ht- block" src="{% static 'logo/vert-logo.png' %}"/>
+							</a>
+						</div>
+						<div class="mf-item hot-deal">
+							<div class="hot-line">
+								<a href="#" class="_dflk">X-mas sale 60%off</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col25s-f upnfz-">
+					<div class="bar-menu">
+					
+						<div class="iconbbtn clear">
+							<div class="mrs1 rflo close_sbar" title="Search"><i class="fa fa-search"></i></div>
+						</div>
+					
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="menu-row-1-padder"></div>
+		<!-- menu row 1 -->
+		
+		
+		<!-- menu row 2 -->
+		<div class="ctrl-block mblock- mnwd">
+			<div class="item-grade navbar-">
+				<div class="cradle">
+					<ul class="la-ul odlt">
+						<li class="la-li">
+							<a href="{% url '_affpage' urlcode='latest-laptop' %}" class="li-itm _dflk">Latest Laptop</a>
+						</li>
+						<li class="la-li">
+							<a href="{% url '_affpage' urlcode='latest-mobile' %}" class="li-itm _dflk">Latest Mobile</a>
+						</li>
+						<li class="la-li">
+							<a href="{% url '_affpage' urlcode='festival-sale' %}" class="li-itm _dflk">Affialate Software</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- menu row 2 -->
+		
+		
+		<!-- slider menu -->
+		<div id="mblock" class="alt-list mblock mnwd" style="display:none">
+			<div id="navb" class="navlist">
+				
+				<nav class="tmenu">
+					
+					<ul class="order1u odlt clear">
+						<li class="order1l small-slick">
+							
+								<div id="hamenu" class="hambox- menu-toggle-">
+									<div class="ham stick1"></div>
+									<div class="ham stick2"></div>
+									<div class="ham stick3"></div>
+								</div>
+							
+						</li>
+						
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='entertainment' %}" class="_dflk menu-item "><span>Entertainment<span> </a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='bollywood' %}" class="_dflk menu-item--- ">Bollywood</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='hollywood' %}" class="_dflk menu-item--- ">Hollywood</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='funny' %}" class="_dflk menu-item--- ">Funny</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='reviews' %}" class="_dflk menu-item--- ">Reviews</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='tvseries' %}" class="_dflk menu-item--- ">Tv Series</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='news' %}" class="_dflk menu-item "><span>News<span> </a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='politics' %}" class="_dflk menu-item--- ">Politics</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='world' %}" class="_dflk menu-item--- ">World</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='science' %}" class="_dflk menu-item--- ">Science</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='lifestyle' %}" class="_dflk menu-item "><span>Lifestyle<span> </a>
+						<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='fashion' %}" class="_dflk menu-item--- ">Fashion</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='food' %}" class="_dflk menu-item--- ">Food</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='travel' %}" class="_dflk menu-item--- ">Travel</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='gadgets' %}" class="_dflk menu-item "><span>Gadgets<span> </a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='mobile' %}" class="_dflk menu-item--- ">Mobile</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='pc' %}" class="_dflk menu-item--- ">PC</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='latest' %}" class="_dflk menu-item--- ">Latest</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='technology' %}" class="_dflk menu-item--- ">Technologies</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='inventions' %}" class="_dflk menu-item--- ">Inventions</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='sports' %}" class="_dflk menu-item "><span>Sports<span> </a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='cricket' %}" class="_dflk menu-item--- ">Cricket</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='football' %}" class="_dflk menu-item--- ">Football</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='games' %}" class="_dflk menu-item--- ">Games</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l collapsemenu togbtn243">
+							<a href="{% url '_catpage' cat='explore' %}" class="_dflk menu-item "><span>Explore<span> </a>
+							<ul class="order2u odlt clear level2drp" style="display:none">
+						
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='explore' labl='top10' %}" class="_dflk menu-item--- ">Top 10</a>
+								</li>
+								<li class="order2l collapsemenu collapsechild">
+									<a href="{% url '_labelpage' cat='explore' labl='other' %}" class="_dflk menu-item--- ">More</a>
+								</li>
+								
+							</ul>
+						</li>
+						
+						
+					</ul>
+				</nav>
+				
+			</div>
+		</div>
+		<!-- slider menu -->
+		
+		<style>
+		.menu {
+    background: #ffff0f;
+    border: solid;
+    border-width: 0 0 1px 0;
+    border-color: #d1cfcf;
+}
+		.order2l- {
+    margin: 2px 0;
+}
+.mrs1 {
+    font-size: 150%;
+    padding: 5px 6px 6px 6px;
+    cursor: pointer;
+    color: #5a5959;
+}
+.mrs1:hover{color:black;}
+.hot-line {
+    font-size: 110%;
+    color: #960019;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+	margin-left:8px;
+}
+		.bar-menu- {
+    display: table;
+    width: 100%;
+}
+		.fixToShadow.mrw1{
+			padding:5px 0;
+			background: #f6f6f6;
+		}
+		.mrw1{
+			padding-top:8px;
+			transition:all linear 0.1s;
+		}
+		
+		.fixToShadow {
+    box-shadow: 0px 1px 5px 0px #666565;
+}
+.cradle {
+    padding: 8px 0;
+}
+		.menu-row-1-padder {
+    padding-top: 45px;
+}
+		li.la-li {
+    display: inline-block;
+}
+li.la-li {
+    display: inline-block;
+    font-size: 90%;
+    margin-left: 10px;
+    color: #383838;
+    font-weight: bold;
+}
+li.la-li:hover {
+    color: #ee0b36;;
+    text-decoration: underline;
+}
+		.mblock- {
+    border: solid #000;
+    border-width: 0;
+}
+		
+		.fixed{position:fixed;width:100%;}
+		.z3{z-index:3;background:white}
+		.navbar {
+    color: black;
+}
+.navbar- {
+    color: black;
+    max-width: 1200px;
+	max-height: 45px;
+    margin: auto;
+	overflow: hidden;
+}
+		.col75s-f{width:75%;float:left;overflow: hidden;}
+		.col25s-f{width:25%;float:left;overflow: hidden;}
+		.block {display: block;}
+		
+img.logo-pr-ht-,.logotop {
+    width: 110px;
+}
+.mf-item {
+    display: table-cell;
+    text-align: center;
+    height: 100%;
+    vertical-align: middle;
+}
+.ham-nod {
+    width: 50px;
+	overflow:hidden;
+}
+.hambox- {
+    height: 18px;
+    width: 20px;
+    padding: 8px;
+    background: transparent;
+    border-radius: 50%;
+}
+.hambox-:hover{
+	background: #ededed;
+}
+		
+		.menubody- {
+    
+    padding-bottom: 5px;
+    color: white;
+    width: 100%;
+    height: 100%;
+	
+}
+.mnwd-set,.x-controller{width:250px;}		
+.mnwd-set {
+    background: #ffffff;
+    position: fixed;
+    height: 100%;
+    overflow-y: hidden;
+    top: 0;
+    border: 0;
+    z-index: 99999999999;
+    left: -100%;
+    transition: all 0.3s linear;
+    color: black;
+    box-shadow: 0px -2px 11px 1px black;
+}
+.mnwd-set:hover{overflow-y:auto;}
+.mnwdToggle{
+	left:0;
+}
+.x-controller {
+    height: 45px;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 0px 2px 0px black;
+}
+.x-controller:hover {
+    box-shadow: 0px 1px 4px 0px black;
+}
+nav.tmenu-set {
+   
+}
+ul.order1u- {
+    padding: 20px;
+    font-size: 120%;
+}
+ul.order2u- {
+    padding-left: 8px;
+    font-size: 90%;
+}
+li.order1l-.togbtn243n {
+    padding-bottom: 10px;
+}
+button#menuToggle {
+    height: 100%;
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+    background: #e0fbfe;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+button#menuToggle:hover {
+    background: #facaca;
+}
+.floee {
+    display: table;
+    width: 100%;
+    text-align: center;
+    font-size: 160%;
+    padding: 10px 0 0 0;
+}
+.lhn-- {
+    width: 33%;
+    display: table-cell;
+}
+.lhn--:hover {
+    background: #828386;
+    color: white;
+}
+.navfoot {
+    padding: 0 20px;
+}
+.panner {
+    border: solid #d9d6d6;
+    border-width: 1px 0 0 0;
+    padding: 20px 0 60px 0;
+    line-height: 1.6;
+    color: #797979;
+}
+a.menu-item--- {
+    display: block;
+    padding: 2px 4px;
+	border-radius:3px;
+}
+a.menu-item---:hover {
+    background: #e1e1e1;
+}
+		
+		
+		</style>
+		<!-- slider menu new -->
+		<div id="mblock2" class="alt-list mblock-set mnwd-set">
+			<div id="navb" class="navlist- nav-tig">
+				<div class="x-controller">
+					<button id="menuToggle" class="menu-swipe sliderMenuToggleOff"><i class="fa fa-close"></i> Close</button>
+				</div>
+				<div class="menu-row-1-padder"></div>
+				<div class="floee">
+					
+					
+						<a href="https://www.facebook.com/figgup-110623833635693/" target="_blank" class="_dflk   lhn--" title="Facebook page">
+							<i class="fbk-m fic- fa fa-facebook"></i>
+						</a>
+						<a href="https://twitter.com/figgup_" target="_blank" class="_dflk  lhn--" title="Twitter account">
+							<i class="twt-m fic- fa fa-twitter"></i>
+						</a>
+						<a href="#" target="_blank" class="_dflk  lhn--" title="YouTube channel">
+							<i class="wsa-m fic- fa fa-youtube"></i>
+						</a>
+					
+				</div>
+				
+				<nav class="tmenu-set">
+				
+					<ul class="order1u- odlt clear">
+						
+						
+						<li class="order1l- collapsemenu- togbtn243n">
+							<a href="{% url '_catpage' cat='entertainment' %}" class="_dflk menu-item-cl "><span>Entertainment<span> </a>
+							<ul class="order2u- odlt clear level2drp">
+						
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='bollywood' %}" class="_dflk menu-item--- ">Bollywood</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='hollywood' %}" class="_dflk menu-item--- ">Hollywood</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='funny' %}" class="_dflk menu-item--- ">Funny</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='reviews' %}" class="_dflk menu-item--- ">Reviews</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='entertainment' labl='tvseries' %}" class="_dflk menu-item--- ">Tv Series</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l- collapsemenu- togbtn243n">
+							<a href="{% url '_catpage' cat='news' %}" class="_dflk menu-item-cl "><span>News<span> </a>
+							<ul class="order2u- odlt clear level2drp">
+						
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='politics' %}" class="_dflk menu-item--- ">Politics</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='world' %}" class="_dflk menu-item--- ">World</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='news' labl='science' %}" class="_dflk menu-item--- ">Science</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l- collapsemenu- togbtn243n">
+							<a href="{% url '_catpage' cat='lifestyle' %}" class="_dflk menu-item-cl "><span>Lifestyle<span> </a>
+						<ul class="order2u- odlt clear level2drp">
+						
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='fashion' %}" class="_dflk menu-item--- ">Fashion</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='food' %}" class="_dflk menu-item--- ">Food</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='lifestyle' labl='travel' %}" class="_dflk menu-item--- ">Travel</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l- collapsemenu- togbtn243n">
+							<a href="{% url '_catpage' cat='gadgets' %}" class="_dflk menu-item-cl "><span>Gadgets<span> </a>
+							<ul class="order2u- odlt clear level2drp">
+						
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='mobile' %}" class="_dflk menu-item--- ">Mobile</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='pc' %}" class="_dflk menu-item--- ">PC</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='latest' %}" class="_dflk menu-item--- ">Latest</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='technology' %}" class="_dflk menu-item--- ">Technologies</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='gadgets' labl='inventions' %}" class="_dflk menu-item--- ">Inventions</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l- collapsemenu- togbtn243n">
+							<a href="{% url '_catpage' cat='sports' %}" class="_dflk menu-item-cl "><span>Sports<span> </a>
+							<ul class="order2u- odlt clear level2drp">
+						
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='cricket' %}" class="_dflk menu-item--- ">Cricket</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='football' %}" class="_dflk menu-item--- ">Football</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='sports' labl='games' %}" class="_dflk menu-item--- ">Games</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="order1l- collapsemenu- togbtn243n">
+							<a href="{% url '_catpage' cat='explore' %}" class="_dflk menu-item-cl "><span>Explore<span> </a>
+							<ul class="order2u- odlt clear level2drp">
+						
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='explore' labl='top10' %}" class="_dflk menu-item--- ">Top 10</a>
+								</li>
+								<li class="order2l- collapsemenu- collapsechild">
+									<a href="{% url '_labelpage' cat='explore' labl='other' %}" class="_dflk menu-item--- ">More</a>
+								</li>
+
+							</ul>
+						</li>
+						
+						
+					</ul>
+					<div class="navfoot">
+						<div class="panner">
+							<div class="lipan">
+								<a class="_dflk ftlk _udlink" href="{% url '_aboutpage' %}">About us</a>
+							</div>
+							<div class="lipan">
+								<a class="_dflk ftlk _udlink" href="{% url '_termspage' %}">Terms & Conditions</a>
+							</div>
+							<div class="lipan">
+								<a class="_dflk ftlk _udlink" href="{% url '_contactpage' %}">Contact/Report</a>
+							</div>
+							<div class="lipan">
+								<a class="_dflk ftlk _udlink" href="{% url '_privacypage' %}">Privacy Policy</a>
+							</div>
+							<div class="lipan">
+								<a class="_dflk ftlk _udlink" href="{% url '_contactpage' %}">Work with us</a>
+							</div>
+						</div>
+					</div>
+				</nav>
+				
+			</div>
+		</div>
+		<!-- slider menu new -->
+		
+		
+	</div>
+	<script>
+		
+			$(document).ready(function(){
+			
+				$(".sliderMenuToggleOn").click(function(e){
+					 $("#mblock2").addClass("mnwdToggle").focus();
+					 
+				});
+				$(".sliderMenuToggleOff").click(function(e){
+					$("#mblock2").removeClass("mnwdToggle")
+				});
+			
+			
+				  $(".menu-item").click(function(e){e.preventDefault();});	
+				
+				  $(".close_sbar").click(function(){
+				  nosh = $("#noshowsearch");
+					if(nosh.hasClass("srcdwn")) nosh.removeClass("srcdwn")
+					else nosh.addClass("srcdwn");
+				  });
+				  
+				  $("#hamenu-").click(function(){
+				  nash = $("#navb");
+					if(nash.hasClass("fl")) nash.removeClass("fl")
+					else nash.addClass("fl");
+				  });
+				  
+				  $("#hamenu,#hamenu-").click(function(){
+					$(".collapsemenu").fadeToggle(200);
+				  });
+				  
+				  $( window ).scroll(function() {
+					w=$(document).scrollTop();z8=$("#article");a=$("#articleguid");st=$("#scrnav");
+					
+					$("#menuToggle").click();
+					
+					if(w>2){
+						$(".fixToScroll").addClass("fixToShadow")
+					}
+					else{
+						$(".fixToScroll").removeClass("fixToShadow")
+					}
+					
+					
+					if(w>50){
+					st.addClass("srcdwn");
+					$("#mblock").addClass("mb");
+						
+					}
+					else {st.removeClass("srcdwn");
+					$("#mblock").removeClass("mb");
+					}
+						
+					if(z8.length){
+						t=z8.position().top;b=t+$("#article").height();
+						if((t<=w)&&(w<=b))a.addClass("srcdwn");
+						else a.removeClass("srcdwn");
+					}
+					
+				  
+				  }).trigger();
+				  
+				  
+				  /*hiding menu*/
+				  
+				  $(document).mousedown(function(e){
+						var cent = $("#mblock,#hamenu-"),nash=$("#navb,#hamenu-") ;
+
+						// if the target of the click isn't the container nor a descendant of the container
+						if (!cent.is(e.target) && cent.has(e.target).length === 0) 
+						{
+							$(".collapsemenu").hide();
+						
+						}
+						if (!nash.is(e.target) && nash.has(e.target).length === 0) 
+						{
+							
+							$("#navb").removeClass("fl");
+						}
+					});
+					
+					
+					$(".togbtn243").hover(function(){
+							$(this).children(".level2drp").show();
+						},function(){
+							$(this).children(".level2drp").hide();
+					});
+					
+					$("#smshr").hover(function(){
+							$(this).children("#shhid").show();
+						},function(){
+							$(this).children("#shhid").hide();
+					});
+				  
+					
+				  
+				});
+				
+				
+		
+		</script>
+
+</div>
+<!-- menu new end-->
